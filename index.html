@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetroMarket - Online Grocery Store</title>
+
+    <!-- Google Font: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo-box">M</div>
+            <span class="logo-text">MetroMarket</span>
+        </div>
+
+        <div class="header-right">
+
+            <!-- Store selection dropdown -->
+            <div class="store-select-wrapper">
+                <label for="store-select">Store:</label>
+                <select id="store-select">
+                    <option value="Sydney CBD">Sydney CBD</option>
+                    <option value="Parramatta">Parramatta</option>
+                    <option value="Chatswood">Chatswood</option>
+                    <option value="Bondi Junction">Bondi Junction</option>
+                    <option value="Liverpool">Liverpool</option>
+                    <option value="Blacktown">Blacktown</option>
+                    <option value="Penrith">Penrith</option>
+                    <option value="Burwood">Burwood</option>
+                    <option value="Ryde">Ryde</option>
+                    <option value="Campbelltown">Campbelltown</option>
+                    <option value="Sutherland">Sutherland</option>
+                    <option value="Manly">Manly</option>
+                </select>
+            </div>
+
+            <button class="shop-btn">SHOP ONLINE</button>
+
+            <!-- Cart display -->
+            <div class="cart-box">
+                <img src="https://media.istockphoto.com/id/1206806317/vector/shopping-cart-icon-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=1RRQJs5NDhcB67necQn1WCpJX2YMfWZ4rYi1DFKlkNA=" class="cart-icon" alt="Cart">
+                <div class="cart-text">
+                    <span id="cart-count">0</span> items<br>
+                    <span id="cart-total">$0.00</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero banner -->
+    <section class="banner">
+        <div class="banner-text">
+            <h1 id="banner-title">DASH IN FOR</h1>
+            <h2 id="banner-subtitle">GREAT DEALS</h2>
+            <p id="banner-tagline">THIS XMAS</p>
+            <button class="learn-btn">LEARN MORE</button>
+        </div>
+
+        <!-- Banner arrows -->
+        <button class="arrow left" onclick="prevBanner()">&lt;</button>
+        <button class="arrow right" onclick="nextBanner()">&gt;</button>
+
+        <!-- Banner dots -->
+        <div class="dots">
+            <div class="dot active" onclick="setBanner(0)"></div>
+            <div class="dot" onclick="setBanner(1)"></div>
+            <div class="dot" onclick="setBanner(2)"></div>
+        </div>
+    </section>
+
+    <!-- Main content -->
+    <main class="content">
+
+        <h1 class="section-title">WELCOME TO METROMARKET SUPERMARKETS</h1>
+        <p class="subtitle">Your local grocery store</p>
+
+        <!-- Featured items -->
+        <h2 class="category-title">Featured Items</h2>
+
+        <div class="product-grid">
+
+            <!-- Product: Meatballs -->
+            <div class="product-card">
+                <img src="https://www.munchkintime.com/wp-content/uploads/2025/01/Best-Swedish-Meatballs-and-Gravy-30.jpg"
+                     class="product-img" alt="Meatballs">
+
+                <h3>Premium Meatballs 500g</h3>
+
+                <div class="product-bottom">
+                    <div class="qty-controls">
+                        <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                        <span class="qty-value">1</span>
+                        <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <span class="price">$10.99</span>
+                </div>
+
+                <div class="product-add-row">
+                    <button class="add-btn" onclick="addToCart(this, 'Premium Meatballs 500g', 10.99)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product: Oranges -->
+            <div class="product-card">
+                <img src="https://www.allrecipes.com/thmb/y_uvjwXWAuD6T0RxaS19jFvZyFU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1205638014-2000-d0fbf9170f2d43eeb046f56eec65319c.jpg"
+                     class="product-img" alt="Oranges">
+
+                <h3>Oranges 1kg</h3>
+
+                <div class="product-bottom">
+                    <div class="qty-controls">
+                        <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                        <span class="qty-value">1</span>
+                        <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <span class="price">$4.00</span>
+                </div>
+
+                <div class="product-add-row">
+                    <button class="add-btn" onclick="addToCart(this, 'Oranges 1kg', 4.00)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product: Pepsi Max -->
+            <div class="product-card">
+                <img src="https://dtgxwmigmg3gc.cloudfront.net/imagery/assets/derivations/icon/512/512/true/eyJpZCI6ImQ2MjExYzNiNTQzNjg4NDA5YTcwNWNmODQyZWJmNjc5Iiwic3RvcmFnZSI6InB1YmxpY19zdG9yZSJ9?signature=c13feea2ebeb5d82884093c94acbf950716380ae26beb4a85a75bf31d0cfd519"
+                     class="product-img" alt="Pepsi Max">
+
+                <h3>Pepsi Max 1.25L</h3>
+
+                <div class="product-bottom">
+                    <div class="qty-controls">
+                        <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                        <span class="qty-value">1</span>
+                        <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <span class="price">$2.50</span>
+                </div>
+
+                <div class="product-add-row">
+                    <button class="add-btn" onclick="addToCart(this, 'Pepsi Max 1.25L', 2.50)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product: Kids Lunch Box -->
+            <div class="product-card">
+                <img src="https://www.stuckonyou.com/media/catalog/product/i/n/inside-view-bento-lunch-box-tray.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:"
+                     class="product-img" alt="Kids Lunch Box">
+
+                <h3>Insulated Kids Lunch Box</h3>
+
+                <div class="product-bottom">
+                    <div class="qty-controls">
+                        <button class="qty-btn" onclick="changeQty(this, -1)">-</button>
+                        <span class="qty-value">1</span>
+                        <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+                    </div>
+                    <span class="price">$9.90</span>
+                </div>
+
+                <div class="product-add-row">
+                    <button class="add-btn" onclick="addToCart(this, 'Kids Lunch Box', 9.90)">Add to Cart</button>
+                </div>
+            </div>
+
+        </div> <!-- end product grid -->
+
+    </main>
+
+    <!-- Contact section -->
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p>Send us a message and our team will get back to you.</p>
+
+        <form id="contact-form">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input id="name" type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input id="email" type="email" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input id="subject" type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone (optional)</label>
+                    <input id="phone" type="tel">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" required></textarea>
+            </div>
+
+            <button type="submit" class="contact-btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Toast notifications -->
+    <div id="toast-container"></div>
+
+    <!-- JavaScript file -->
+    <script src="js/script.js"></script>
+</body>
+</html>
